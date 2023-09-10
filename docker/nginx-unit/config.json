@@ -11,8 +11,8 @@
       "working_directory": "/var/www/html",
       "root": "/var/www/html/public/",
       "script": "index.php",
-      "user": "unit",
-      "group": "unit"
+      "user": "www-data",
+      "group": "www-data"
     }
   }
 }
