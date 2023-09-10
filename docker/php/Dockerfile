@@ -27,10 +27,6 @@ RUN apt-get update \
 RUN curl -sS https://getcomposer.org/installer | \
     php -- --install-dir=/usr/local/bin --filename=composer
 
-# APCU
-RUN pecl install apcu
-RUN docker-php-ext-enable apcu
-
 # INTL
 RUN docker-php-ext-install intl
 RUN docker-php-ext-enable intl
