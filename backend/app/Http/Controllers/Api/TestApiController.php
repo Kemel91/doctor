@@ -11,8 +11,15 @@ class TestApiController extends Controller
 {
     public function index(): JsonResponse
     {
+        $start = microtime(true);
+        $bootstrap = round($start - LARAVEL_START, 3);
         $users = User::query()->paginate(50);
+        $loadUsers = round(microtime(true) - $start, 3);
 
-        return new JsonResponse($users);
+        return new JsonResponse([
+            'bootstrap' => $bootstrap,
+            'load_users' => $loadUsers,
+            'users' => $users
+            ]);
     }
 }

@@ -31,6 +31,10 @@ RUN apt-get update \
 # Install PHP
 # ------------------------------------------------------------------------------
 
+# Composer
+RUN curl -sS https://getcomposer.org/installer | \
+    php -- --install-dir=/usr/local/bin --filename=composer \
+
 # INTL
 RUN docker-php-ext-install intl
 RUN docker-php-ext-enable intl
@@ -45,9 +49,6 @@ RUN docker-php-ext-enable zip
 
 # Opcache
 RUN docker-php-ext-install opcache
-
-# Sockets
-RUN docker-php-ext-install sockets
 
 # ------------------------------------------------------------------------------
 # Cleanup Dependencies
