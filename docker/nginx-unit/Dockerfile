@@ -1,7 +1,4 @@
 FROM unit:1.31.0-php8.2
-COPY ./*.pem  /docker-entrypoint.d/
-COPY ./*.json /docker-entrypoint.d/
-COPY ./*.sh   /docker-entrypoint.d/
 
 ARG SITE_PATH=/var/www/html
 
