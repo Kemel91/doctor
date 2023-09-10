@@ -31,10 +31,6 @@ RUN apt-get update \
 # Install PHP
 # ------------------------------------------------------------------------------
 
-# APCU
-RUN pecl install apcu
-RUN docker-php-ext-enable apcu
-
 # INTL
 RUN docker-php-ext-install intl
 RUN docker-php-ext-enable intl
