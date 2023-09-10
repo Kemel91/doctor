@@ -1,14 +1,29 @@
 version: "3.8"
 
 services:
-  nginx:
-    image: nginx:alpine
-    container_name: doctor-nginx
-    working_dir: /var/www/html
+#  nginx:
+#    image: nginx:alpine
+#    container_name: doctor-nginx
+#    working_dir: /var/www/html
+#    volumes:
+#      - ./backend:/var/www/html
+#      - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
+#      - ./docker/data/logs/nginx:/var/log/nginx/
+#    ports:
+#      - "80:80"
+#    depends_on:
+#      - php
+#    networks:
+#      - doctor
+
+  nginx-unit:
+#    build: ./system/nginx-unit
+    image: unit:1.31.0-php8.2
+    container_name: doctor-nginx-unit
     volumes:
       - ./backend:/var/www/html
-      - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
-      - ./docker/data/logs/nginx:/var/log/nginx/
+      - ./docker/nginx-unit/config.json:/docker-entrypoint.d/config.json
+    working_dir: /var/www/html
     ports:
       - "80:80"
     depends_on:
