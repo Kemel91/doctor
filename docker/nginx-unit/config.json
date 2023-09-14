@@ -1,13 +1,7 @@
 {
   "listeners": {
     "*:80": {
-      "pass": "routes",
-      "options": {
-        "keepalive": {
-          "requests": 100,
-          "timeout": 20
-        }
-      }
+      "pass": "routes"
     }
   },
   "routes": [
