@@ -9,3 +9,8 @@
 5. composer install --no-dev --optimize-autoloader
 6. php artisan key:generate
 7. php artisan migrate
+
+OR
+
+1. git pull
+2. deploy.sh deploy
