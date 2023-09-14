@@ -3,4 +3,9 @@
 
 ### Deploy
 1. git pull
-2. composer install --no-dev --optimize-autoloader
+2. docker-compose up -d --build 
+3. cp backend/.env.example backend/.env
+4. docker exec -it doctor-nginx-unit /bin/bash
+5. composer install --no-dev --optimize-autoloader
+6. php artisan key:generate
+7. php artisan migrate
